@@ -1,0 +1,64 @@
+========================================================================================
+             FINEDGE SECURITIES LTD. - STOCK MARKET ANALYTICS REPORT
+========================================================================================
+1. DATASET DETAILS:
+   - Source File                : stock_data.csv
+   - Total Records              : 300
+   - Schema                     : Timestamp (string), Stock (string), Price (double)
+   - Date Range Covered         : 2026-01-05 to 2026-03-05 (60 trading periods)
+
+2. STOCKS ANALYSED:
+   - Evaluated Tickers          : AAPL, AMZN, GOOGL, MSFT, TSLA
+
+3. STOCK PRICE SUMMARY (AVERAGE, MINIMUM, MAXIMUM):
+Stock    | Records  | Avg Price ($)  | Min Price ($)  | Max Price ($) 
+----------------------------------------------------------------------
+AAPL     | 60       | 202.22         | 181.07         | 230.34        
+AMZN     | 60       | 190.48         | 175.00         | 205.17        
+GOOGL    | 60       | 178.72         | 159.69         | 191.89        
+MSFT     | 60       | 420.10         | 409.53         | 435.31        
+TSLA     | 60       | 246.48         | 192.81         | 341.00
+
+4. CUMULATIVE STOCK RETURNS (FIRST vs LAST PRICE VIA WINDOW FUNCTIONS):
+Stock    | First Price ($)  | Last Price ($)  | Return (%)  
+------------------------------------------------------------
+TSLA     | 210.00           | 331.70          | 57.95       
+AAPL     | 185.00           | 230.34          | 24.51       
+GOOGL    | 160.00           | 186.04          | 16.27       
+AMZN     | 175.00           | 193.18          | 10.39       
+MSFT     | 415.00           | 410.46          | -1.09
+
+5. BEST-PERFORMING STOCK:
+   - Symbol                     : TSLA
+   - Period Return              : 57.95%
+   - Evaluation Method          : Spark Window partitionBy("Stock") first/last price comparison
+
+6. MOVING AVERAGE ANALYSIS:
+   - Method                     : 3-period rolling window rowsBetween(-2, 0)
+   - Purpose                    : Smooths out short-term price fluctuations and highlights baseline trend
+
+7. VOLATILITY RESULTS (RISK MEASURE):
+Stock    | Volatility (StdDev %) 
+----------------------------------
+TSLA     | 2.46                  
+AMZN     | 1.38                  
+GOOGL    | 1.11                  
+AAPL     | 0.98                  
+MSFT     | 0.80
+
+8. MARKET TREND OBSERVATIONS:
+   - Dominant Market Momentum   : Positive growth observed across analysed securities
+   - Highest Value Security     : MSFT with Average Price $420.10
+   - Highest Price Peak         : MSFT peaking at $435.31
+   - Lowest Price Floor         : GOOGL at $159.69
+
+9. EDUCATIONAL INVESTMENT RECOMMENDATIONS:
+   * DISCLAIMER: Educational analysis only -- not financial advice.
+   - For Growth Investors       : Focus on TSLA which exhibited the strongest upward momentum.
+   - For Risk-Averse Investors  : Choose stocks with the lowest volatility stddev to minimize drawdown risk.
+   - For Value Investors        : Consider securities trading close to their historical moving average baselines.
+
+10. CONCLUSION:
+   Window-based analysis in PySpark enables efficient time-series computations (lag, rolling averages,
+   cumulative returns) at massive scale without requiring memory-intensive shuffles or external libraries.
+========================================================================================
