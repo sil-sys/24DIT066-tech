@@ -1,0 +1,106 @@
+========================================================================================
+            TRENDPULSE SOCIAL MEDIA TREND DETECTION REPORT
+========================================================================================
+1. DATASET DETAILS:
+   - Source File                : social_media_hashtags.csv
+   - Total Records              : 650
+   - Schema                     : Timestamp (string), Platform (string), Hashtag (string), Region (string)
+   - Data Nature                : Generated / Sample dataset for educational evaluation
+
+2. TOTAL RECORDS:
+   - Total Monitored Posts      : 650
+
+3. UNIQUE HASHTAGS:
+   - Total Distinct Hashtags    : 18
+
+4. PLATFORM DISTRIBUTION:
+Platform         | Total Posts     
+----------------------------------
+Facebook         | 172             
+Instagram        | 165             
+LinkedIn         | 160             
+Twitter/X        | 153
+
+5. REGION DISTRIBUTION:
+Region           | Top Hashtag          | Post Count  
+----------------------------------------------------
+Asia-Pacific     | #Cricket             | 20          
+Latin America    | #MachineLearning     | 20          
+North America    | #AI                  | 20          
+Middle East      | #AI                  | 16          
+Europe           | #MachineLearning     | 15
+
+6. HASHTAG FREQUENCY ANALYSIS:
+   - Evaluated across all monitored interactions with dynamic grouping and frequency sorting.
+
+7. TOP 10 HASHTAGS:
+Rank   | Hashtag              | Occurrences 
+------------------------------------------
+1      | #AI                  | 75          
+2      | #Cricket             | 68          
+3      | #MachineLearning     | 58          
+4      | #Netflix             | 52          
+5      | #DataScience         | 45          
+6      | #Football            | 42          
+7      | #Gaming              | 38          
+8      | #Tech                | 35          
+9      | #IPL                 | 34          
+10     | #CloudComputing      | 32
+
+8. TOP 5 TRENDING HASHTAGS:
+Rank   | Hashtag              | Occurrences 
+------------------------------------------
+1      | #AI                  | 75          
+2      | #Cricket             | 68          
+3      | #MachineLearning     | 58          
+4      | #Netflix             | 52          
+5      | #DataScience         | 45
+
+9. TOP 3 TRENDING HASHTAGS:
+Rank   | Hashtag              | Occurrences 
+------------------------------------------
+1      | #AI                  | 75          
+2      | #Cricket             | 68          
+3      | #MachineLearning     | 58
+   * Top Trending Hashtag       : #AI (75 occurrences)
+
+10. DAILY TREND ANALYSIS:
+Date         | Daily Top Hashtag    | Post Count  
+------------------------------------------------
+2026-03-01   | #AI                  | 16          
+2026-03-02   | #AI                  | 17          
+2026-03-03   | #Cricket             | 16          
+2026-03-04   | #AI                  | 19          
+2026-03-05   | #Cricket             | 14
+
+11. REGIONAL ANALYSIS:
+Region           | Top Hashtag          | Post Count  
+----------------------------------------------------
+Asia-Pacific     | #Cricket             | 20          
+Latin America    | #MachineLearning     | 20          
+North America    | #AI                  | 20          
+Middle East      | #AI                  | 16          
+Europe           | #MachineLearning     | 15
+
+12. CATEGORY ANALYSIS:
+Category         | Number of Posts 
+----------------------------------
+Technology       | 273             
+Sports           | 199             
+Entertainment    | 178
+   * Leading Category           : Technology (273 posts)
+
+13. USER INTEREST ANALYSIS:
+   - User attention is primarily concentrated in cutting-edge Technology topics (#AI, #MachineLearning),
+     followed by high-energy Sports discussions (#Cricket, #Football) and Entertainment streaming (#Netflix).
+
+14. BUSINESS RECOMMENDATIONS:
+   * DISCLAIMER: Educational analysis based on generated/sample social media data.
+   - Allocate promotional spending to high-affinity topics (#AI, #Cricket, #MachineLearning).
+   - Leverage multi-platform distribution based on user demographics (Tech -> LinkedIn, Sports -> Twitter/X).
+   - Monitor daily breakout hashtags to optimize real-time digital marketing responses.
+
+15. CONCLUSION:
+   PySpark DataFrame transformations, grouping, and window functions offer massive scalability
+   and low latency for parsing unstructured social interaction streams and extracting actionable trends.
+========================================================================================
