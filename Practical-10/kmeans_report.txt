@@ -1,0 +1,73 @@
+========================================================================================
+            RETAILEDGE ANALYTICS - SCALABLE CUSTOMER SEGMENTATION REPORT
+========================================================================================
+1. DATASET DETAILS:
+   - Source File                : customer_transactions.csv
+   - Total Transactions         : 11,729
+   - Total Segmented Customers  : 1,000
+   - Evaluation Nature          : Generated / Sample dataset for educational evaluation
+
+2. FEATURE DEFINITIONS:
+   - Total Spend ($)            : Cumulative expenditure across all transactions (sum(amount))
+   - Purchase Frequency         : Total number of completed purchases (count(transaction_id))
+   - Average Basket Size ($)    : Mean transaction order value (avg(amount))
+   - Recency (Days)             : Days elapsed between reference date and latest customer purchase
+
+3. PREPROCESSING SUMMARY:
+   - Null and negative records filtered; dates cast to standard ISO format.
+   - Clean transaction count    : 11,729
+
+4. FEATURE SCALING (StandardScaler):
+   - Applied StandardScaler (mean=0, std=1) across all 4 customer dimensions.
+   - Prevents total_spend ($10-$1500) from overpowering frequency (1-35).
+
+5. SPARK MLlib K-MEANS RESULTS (k = 5):
+   - Number of Clusters (k)     : 5
+   - Seed                       : 42
+   - WSSSE Cost                 : 658.8786
+   - Training Duration          : 5.2438 seconds
+
+6. CLUSTER SIZES & SEGMENT SUMMARIES (ORIGINAL SPACE):
+Cluster  | Customers  | Avg Spend ($)  | Avg Frequency  | Avg Basket ($)  | Avg Recency (Days)  
+------------------------------------------------------------------------------------------
+0        | 342        | 496.89         | 16.78          | 30.62           | 19.61               
+1        | 124        | 72.25          | 2.70           | 25.40           | 85.88               
+2        | 90         | 1739.20        | 26.58          | 67.54           | 8.23                
+3        | 275        | 272.18         | 8.11           | 33.95           | 46.53               
+4        | 169        | 370.41         | 6.11           | 62.99           | 74.04
+
+7. CUSTOMER SEGMENT INTERPRETATION:
+   - Cluster 0: Loyal / Regular Customers (Active & Consistent)
+     Strategy: Product recommendations, points-based loyalty rewards.
+   - Cluster 1: At-Risk / Lapsed Customers (High Recency, Low Activity)
+     Strategy: Win-back discounts, re-engagement emails, churn prevention.
+   - Cluster 2: VIP / High-Value Frequent Shoppers (Top Revenue Driver)
+     Strategy: Exclusive VIP perks, early access, personalized concierge service.
+   - Cluster 3: Moderate Value / Selective Buyers
+     Strategy: Cross-sell campaigns, seasonal notifications, targeted newsletters.
+   - Cluster 4: At-Risk / Lapsed Customers (High Recency, Low Activity)
+     Strategy: Win-back discounts, re-engagement emails, churn prevention.
+
+8. ELBOW METHOD ANALYSIS (k = 3 to 7):
+   - k=3 : WSSSE = 1264.8281
+   - k=4 : WSSSE = 861.3095
+   - k=5 : WSSSE = 658.8786
+   - k=6 : WSSSE = 593.2574
+   - k=7 : WSSSE = 518.2899
+   * Elbow Observation: Significant loss reduction occurs up to k=5 (47.9% drop from k=3);
+     subsequent drops taper off (21.3%), confirming k=5 as optimal.
+
+9. BISECTING K-MEANS COMPARISON:
+   - Standard K-Means WSSSE     : 658.8786
+   - Bisecting K-Means WSSSE    : 883.5439
+
+10. EXECUTION BENCHMARK (Single-Node vs Distributed):
+   - Scikit-learn K-Means       : 3.2269 seconds
+   - Spark MLlib K-Means        : 5.2438 seconds
+   * Takeaway: Single-node sklearn executes quickly for small in-memory datasets due to minimal overhead.
+     Spark MLlib shines when datasets scale to millions of rows across clustered worker nodes.
+
+11. CONCLUSION:
+   Parallel K-Means using Apache Spark MLlib enables robust, scalable customer segmentation
+   that translates transactional big data directly into actionable marketing strategies.
+========================================================================================
