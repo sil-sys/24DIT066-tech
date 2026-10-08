@@ -1,0 +1,50 @@
+================================================================================
+      RETAIL EDGE ANALYTICS - CUSTOMER SALES DASHBOARD EXECUTIVE REPORT
+================================================================================
+1. DATASET & ENVIRONMENT DETAILS:
+   - Dataset Name             : Superstore Sales Dataset
+   - Total Clean Orders       : 4,989
+   - Total Order Line Items   : 5,000
+   - Date Span                : 2024-01-01 to 2026-06-30
+   - Geographic Scope         : United States (4 Regions, 20 States)
+
+2. EXECUTIVE KPI BENCHMARKS:
+   - Total Sales Revenue      : $8,885,748.66
+   - Net Profit               : $683,907.28
+   - Overall Profit Margin    : 7.70%
+   - Total Orders Completed   : 4,989
+   - Unique Customers         : 4,990
+   - Total Units Sold         : 25,049
+   - Average Order Value (AOV): $1,781.07
+   - Loss-Making Line Items   : 1,961 (39.2% of total)
+
+3. CATEGORY PERFORMANCE BREAKDOWN:
+   Category           | Sales ($)      | Profit ($)   | Margin %   | Sales Share % 
+   ---------------------------------------------------------------------------
+   Furniture          | $2,455,554.15  | $-217,559.55 | -8.86    % | 27.63        %
+   Office Supplies    | $610,953.54    | $73,665.06   | 12.06    % | 6.88         %
+   Technology         | $5,819,240.97  | $827,801.77  | 14.23    % | 65.49        %
+
+4. REGIONAL PERFORMANCE BREAKDOWN:
+   Region       | Sales ($)      | Profit ($)   | Margin %   | Orders  
+   -----------------------------------------------------------------
+   Central      | $1,994,855.16  | $166,551.27  | 8.35     % | 1,149   
+   East         | $2,214,518.15  | $145,988.68  | 6.59     % | 1,269   
+   South        | $2,349,181.39  | $176,328.82  | 7.51     % | 1,307   
+   West         | $2,327,193.96  | $195,038.51  | 8.38     % | 1,270   
+
+5. CUSTOMER SEGMENT BREAKDOWN:
+   Segment         | Sales ($)      | Profit ($)   | Margin %   | AOV ($)   
+   ----------------------------------------------------------------------
+   Consumer        | $4,461,523.03  | $303,121.11  | 6.79     % | $1742.78  
+   Corporate       | $2,793,222.82  | $228,212.51  | 8.17     % | $1789.38  
+   Home Office     | $1,631,002.81  | $152,573.66  | 9.35     % | $1861.88  
+
+6. KEY STRATEGIC FINDINGS:
+   - Technology generates highest profit margins driven by Copiers and Phones.
+   - Furniture exhibits margin compression due to heavy discounting on Tables and Bookcases.
+   - Consumer segment constitutes the largest revenue volume (~52%), with stable margins.
+   - West and East regions lead national performance with strong average order values.
+
+7. TOTAL EXECUTION TIME       : 3.91 seconds
+================================================================================
