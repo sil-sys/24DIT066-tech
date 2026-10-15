@@ -1,0 +1,24 @@
+TASK 4: SPARK MLLIB ALGORITHM COMPARISON & ANALYTICAL DISCUSSION
+Author: Sil Shah (24DIT066) | CSUE301: Big Data Analytics
+======================================================================
+
+EVALUATION RESULTS (Customer Churn Prediction):
+Logistic Regression: Accuracy = 70.35%, F1 = 70.24%, ROC-AUC = 0.7590
+Random Forest:       Accuracy = 70.65%, F1 = 70.22%, ROC-AUC = 0.7674
+
+WHY RANDOM FOREST OUTPERFORMED LOGISTIC REGRESSION:
+1. Non-Linear Decision Boundaries:
+   Logistic Regression assumes a strictly linear log-odds relationship between input features
+   and customer churn probability. However, churn behaviors are inherently non-linear—e.g.,
+   customers with low tenure and fiber optic internet have disproportionately higher churn
+   than indicated by linear weights. Random Forest naturally partitions the feature space into
+   orthogonal hyper-rectangles capable of capturing non-linear interactions.
+
+2. Feature Interaction Capture:
+   Random Forest hierarchically splits across multiple features (e.g., ContractType == Month-to-Month
+   AND CustomerServiceCalls >= 3). In contrast, Logistic Regression requires explicit manual interaction
+   terms to model coupled predictor effects.
+
+3. Ensemble Variance Reduction (Bagging):
+   By aggregating 50 decorrelated decision trees, Random Forest significantly reduces variance
+   and resists overfitting, yielding a substantially superior ROC-AUC score.

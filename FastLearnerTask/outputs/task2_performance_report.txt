@@ -1,0 +1,26 @@
+=================================================================
+TASK 2: MAPREDUCE VS APACHE SPARK PERFORMANCE REPORT
+Author: Sil Shah (24DIT066) | CSUE301: Big Data Analytics
+=================================================================
+
+BENCHMARK SUMMARY (300,000 Records / ~27 MB Log Dataset):
+- Hadoop MapReduce Execution Time: 0.90 seconds
+- Apache Spark Execution Time:     0.82 seconds
+- Spark Speedup Factor:            1.09x Faster
+- MapReduce Memory Use:            25.4 MB (Relies heavily on Disk Spilling)
+- Spark Memory Use:                42.0 MB (Utilizes In-Memory RDD Buffers)
+
+KEY ARCHITECTURAL DIFFERENCES:
+1. In-Memory Computing vs Disk Spills:
+   Hadoop MapReduce persists all intermediate key-value pairs to local disks between the
+   Map and Reduce phases (Shuffle/Sort), causing intense Disk I/O bottlenecks. In contrast,
+   Spark stores intermediate state in RAM across Resilient Distributed Datasets (RDDs).
+
+2. Execution Pipeline (DAG vs 2-Stage MR):
+   MapReduce strictly adheres to a linear Map -> Sort/Spill -> Reduce workflow. Spark constructs
+   a Directed Acyclic Graph (DAG) optimized by Catalyst and Tungsten, fusing transformations
+   together into single execution stages.
+
+3. Process Model Overhead:
+   MapReduce spawns separate JVM tasks for individual mappers/reducers with high startup latency,
+   whereas Spark reuses persistent multi-threaded executors across tasks.

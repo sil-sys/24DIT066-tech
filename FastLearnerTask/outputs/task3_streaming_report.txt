@@ -1,0 +1,14 @@
+TASK 3: REAL-TIME STREAMING WITH KAFKA & SPARK REPORT
+Author: Sil Shah (24DIT066) | CSUE301: Big Data Analytics
+=================================================================
+
+STREAMING WINDOW METRICS SUMMARY:
+Window Duration:  1 Minute Tumbling Window
+Watermark Delay:  10 Seconds (Tolerates out-of-order event arrivals)
+Aggregation Type: count(*) AS events_per_minute, avg(metric_value)
+Window 1 [12:00 - 12:01]: 6 events (temperature: 3, vibration: 2, pressure: 1)
+Window 2 [12:01 - 12:02]: 7 events (temperature: 2, vibration: 2, pressure: 2, humidity: 1)
+Window 3 [12:02 - 12:03]: 4 events (temperature: 1, vibration: 1, pressure: 1, humidity: 1)
+
+Total Throughput: 17 events processed across 3 discrete time micro-batches.
+Architecture Diagram: outputs/task3_streaming_architecture.png
